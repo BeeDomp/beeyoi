@@ -114,7 +114,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
         ],
         [
             InlineKeyboardButton(
-                text=_"ᴍᴇ",
+                text="ᴍᴇ",
                 url="https://t.me/iamuput",
             ),
             InlineKeyboardButton(
