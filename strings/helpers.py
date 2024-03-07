@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 HELP_1 = """✅**<u>Admin Commands:</u>**
 
 **c** stands for channel play.
@@ -51,10 +41,6 @@ ForcePlay Commands = playforce , vplayforce , cplayforce
 **v** stands for video play.
 **force** stands for force play.
 
-/sg - To check history name
-/tagall - Mention all group members
-/stoptag - Stopped mention
-
 /play or /vplay or /cplay  - Bot will start playing your given query on voice chat or Stream live links on voice chats.
 
 /playforce or /vplayforce or /cplayforce -  **Force Play** stops the current playing track on voice chat and starts playing the searched track instantly without disturbing/clearing queue.
@@ -72,7 +58,7 @@ HELP_3 = """✅<u>**Bot Commands:**</u>
 
 /stats - Get Top 10 Tracks Global Stats, Top 10 Users of bot, Top 10 Chats on bot, Top 10 Played in a chat etc etc.
 
-/sudolist - Check Sudo Users of Yukki Music Bot
+/sudolist - Check Sudo Users of Nezuko Music Bot
 
 /lyrics [Music Name] - Searches Lyrics for the particular Music on web.
 
@@ -116,7 +102,7 @@ HELP_4 = """✅<u>**Extra  Commands:**</u>
 
 3️⃣ **Play Type** [Everyone or Admins] - If admins, only admins present in group can play music on voice chat."""
 
-HELP_5 = """🔰**<u>ADD & REMOVE SUDO USERS :</u>**
+HELP_5 = """🔰**<u>Sudo Commands :</u>**
 /addsudo [Username or Reply to a user]
 /delsudo [Username or Reply to a user]
 
@@ -178,4 +164,67 @@ HELP_5 = """🔰**<u>ADD & REMOVE SUDO USERS :</u>**
 
 **Example:** `/broadcast -user -assistant -pin Hello Testing`
 
+"""
+
+HELP_6 = """
+<b><u>Black Pink :</b></u>
+
+ ⦿ /blackpink - Generates A Blackpink-Style Logo.
+ """
+
+HELP_7 = """
+<b><u>Github :</b></u>
+
+ ⦿ /git [Username] - Get Information About A Github User.
+ ⦿ /github [Username] - Get Information About A Github User.
+ """
+
+HELP_8 = """
+<b><u>Info :</b></u>
+
+/id : Get The Current Group id. If Used By Replying To A Message, Get That User's ID.
+/info : Get Information About A User.
+"""
+
+HELP_9 = """
+<b><u>Telegraph :</b></u>
+
+⦿ /tgm : Uploads A Photo (Under 5ᴍʙ) To The Cloud And Gives A Link.
+"""
+
+HELP_10 = """
+<b><u>Welcome :</b></u>
+
+ ⦿ /wel [ᴏɴ/ᴏғғ] : Special Welcome On In Your Group.
+"""
+
+
+HELP_11 = """
+<b><u>AFK :</b></u>
+
+⦿ /afk : To Start AFK.
+"""
+
+HELP_12 = """
+<b><u>Couples :</b></u>
+
+⦿ /couples : Get Todays Couples Of The Group In Interactive View.
+"""
+
+HELP_13 = """
+<b><u>Carbon :</b></u>
+
+⦿ /carbon : Make a Carbon.
+"""
+
+HELP_14 = """
+<b><u>Quotly :</b></u>
+
+⦿ /q : Generate Quotly From Message.
+"""
+
+HELP_15 = """
+<b><u>SangMata :</b></u>
+
+⦿ /sg : To Check History Name.
 """
