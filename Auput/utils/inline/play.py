@@ -45,13 +45,20 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             )
         ],
         [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+        [
+            InlineKeyboardButton(
+                text=_"ᴍᴇ",
+                url="https://t.me/iamuput",
+            ),
             InlineKeyboardButton(
                 text=_["PL_B_2"],
                 url="https://t.me/Flukosaa",
-            ),
-            InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
         ],
         [
@@ -92,6 +99,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄"
 
     buttons = [
+    buttons = [
         [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
@@ -99,13 +107,26 @@ def telegram_markup_timer(_, chat_id, played, dur):
             )
         ],
         [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+        [
             InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup None|{chat_id}",
+                text=_"ᴍᴇ",
+                url="https://t.me/iamuput",
             ),
+            InlineKeyboardButton(
+                text=_["PL_B_2"],
+                url="https://t.me/Flukosaa",
+            ),
+        ],
+        [
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"], callback_data="close"
-            ),
+            )
         ],
     ]
     return buttons
