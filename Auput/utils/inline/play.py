@@ -7,34 +7,36 @@ from pyrogram.types import InlineKeyboardButton
 from Auput.utils.formatters import time_to_seconds
 
 
-## After Edits with Timer Bar
 
 
-def stream_markup_timer(_, chat_id, played, dur):
+def stream_markup_timer(_, videoid, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    iamuput = math.floor(percentage)
-    if 0 < iamuput <= 10:
+    Uputt = math.floor(percentage)
+    if 0 < Uputt <= 10:
         bar = "✄·─·─·─·─·─·─·─·─·─"
-    elif 10 < iamuput < 20:
+    elif 10 < Uputt < 20:
         bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
-    elif 20 <= iamuput < 30:
+    elif 20 <= Uputt < 30:
         bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
-    elif 30 <= iamuput < 40:
+    elif 30 <= Uputt < 40:
         bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
-    elif 40 <= iamuput < 50:
+    elif 40 <= Uputt < 50:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
-    elif 50 <= iamuput < 60:
+    elif 50 <= Uputt < 60:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
-    elif 60 <= iamuput < 70:
+    elif 60 <= Uputt < 70:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
-    elif 70 <= iamuput < 80:
+    elif 70 <= Uputt < 80:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
-    elif 80 <= iamuput < 95:
+    elif 80 <= Uputt < 95:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
-    else:
+    elif 95 <= Uputt < 100:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
+    else:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄"
+
     buttons = [
         [
             InlineKeyboardButton(
@@ -65,27 +67,30 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    iamuput = math.floor(percentage)
-    if 0 < iamuput <= 10:
-        bar = "✄·─·─·─·─·─·─·─·─·─"
-    elif 10 < iamuput < 20:
-        bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
-    elif 20 <= iamuput < 30:
-        bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
-    elif 30 <= iamuput < 40:
-        bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
-    elif 40 <= iamuput < 50:
-        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
-    elif 50 <= iamuput < 60:
-        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
-    elif 60 <= iamuput < 70:
-        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
-    elif 70 <= iamuput < 80:
-        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
-    elif 80 <= iamuput < 95:
-        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
+    Uputt = math.floor(percentage)
+    if 0 < Uputt <= 10:
+        bar = "▷───────────"
+    elif 10 < Uputt < 20:
+        bar = "─▷──────────"
+    elif 20 <= Uputt < 30:
+        bar = "──▷─────────"
+    elif 30 <= Uputt < 40:
+        bar = "───▷────────"
+    elif 40 <= Uputt < 50:
+        bar = "────▷───────"
+    elif 50 <= Uputt < 60:
+        bar = "─────▷──────"
+    elif 60 <= Uputt < 70:
+        bar = "──────▷─────"
+    elif 70 <= Uputt < 80:
+        bar = "───────▷────"
+    elif 80 <= Uputt < 95:
+        bar = "────────▷───"
+    elif 95 <= Uputt < 100:
+        bar = "─────────▷──"
     else:
-        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
+        bar = "───────────▷"
+
     buttons = [
         [
             InlineKeyboardButton(
