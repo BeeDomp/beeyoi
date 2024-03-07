@@ -6,73 +6,63 @@ from pyrogram.types import InlineKeyboardButton
 
 from Auput.utils.formatters import time_to_seconds
 
-selections = [
-    "◉—————————",
-    "—◉————————",
-    "——◉———————",
-    "———◉——————",
-    "————◉—————",
-    "—————◉————",
-    "——————◉———",
-    "———————◉——",
-    "————————◉—",
-    "—————————◉",
-]
-
-
-## After Edits with Timer Bar
-
 
 def stream_markup_timer(_, videoid, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    Uputt = math.floor(percentage)
-    if 0 < Uputt <= 10:
-        bar = "▷───────────"
-    elif 10 < Uputt < 20:
-        bar = "─▷──────────"
-    elif 20 <= Uputt < 30:
-        bar = "──▷─────────"
-    elif 30 <= Uputt < 40:
-        bar = "───▷────────"
-    elif 40 <= Uputt < 50:
-        bar = "────▷───────"
-    elif 50 <= Uputt < 60:
-        bar = "─────▷──────"
-    elif 60 <= Uputt < 70:
-        bar = "──────▷─────"
-    elif 70 <= Uputt < 80:
-        bar = "───────▷────"
-    elif 80 <= Uputt < 95:
-        bar = "────────▷───"
-    elif 95 <= Uputt < 100:
-        bar = "─────────▷──"
+    iamuput = math.floor(percentage)
+    if 0 < iamuput <= 10:
+        bar = "✄·─·─·─·─·─·─·─·─·─"
+    elif 10 < iamuput < 20:
+        bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
+    elif 20 <= iamuput < 30:
+        bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
+    elif 30 <= iamuput < 40:
+        bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
+    elif 40 <= iamuput < 50:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
+    elif 50 <= iamuput < 60:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
+    elif 60 <= iamuput < 70:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
+    elif 70 <= iamuput < 80:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
+    elif 80 <= iamuput < 95:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
     else:
-        bar = "───────────▷"
-
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
     buttons = [
-        [
+                [
             InlineKeyboardButton(
                 text=f"{played} {bar} {dur}",
                 callback_data="GetTimer",
             )
         ],
         [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+                 [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                url="https://t.me/Flukosaa",
+
+                text="ᴍᴇ",
+
+                url=f"t.me/{OWNER_USERNAME}",
+
             ),
             InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup {videoid}|{chat_id}",
+
+                text="ᴄʜᴀɴɴᴇʟ",
+
+                url=f"{SUPPORT_CHANNEL}",
+
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], callback_data="close"
-            )
-        ],
+        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
@@ -81,30 +71,27 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    Uputt = math.floor(percentage)
-    if 0 < Uputt <= 10:
-        bar = "▷───────────"
-    elif 10 < Uputt < 20:
-        bar = "─▷──────────"
-    elif 20 <= Uputt < 30:
-        bar = "──▷─────────"
-    elif 30 <= Uputt < 40:
-        bar = "───▷────────"
-    elif 40 <= Uputt < 50:
-        bar = "────▷───────"
-    elif 50 <= Uputt < 60:
-        bar = "─────▷──────"
-    elif 60 <= Uputt < 70:
-        bar = "──────▷─────"
-    elif 70 <= Uputt < 80:
-        bar = "───────▷────"
-    elif 80 <= Uputt < 95:
-        bar = "────────▷───"
-    elif 95 <= Uputt < 100:
-        bar = "─────────▷──"
+    iamuput = math.floor(percentage)
+    if 0 < iamuput <= 10:
+        bar = "✄·─·─·─·─·─·─·─·─·─"
+    elif 10 < iamuput < 20:
+        bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
+    elif 20 <= iamuput < 30:
+        bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
+    elif 30 <= iamuput < 40:
+        bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
+    elif 40 <= iamuput < 50:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
+    elif 50 <= iamuput < 60:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
+    elif 60 <= iamuput < 70:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
+    elif 70 <= iamuput < 80:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
+    elif 80 <= iamuput < 95:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
     else:
-        bar = "───────────▷"
-
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
     buttons = [
         [
             InlineKeyboardButton(
@@ -113,10 +100,13 @@ def telegram_markup_timer(_, chat_id, played, dur):
             )
         ],
         [
-            InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup None|{chat_id}",
-            ),
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+        [
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"], callback_data="close"
             ),
