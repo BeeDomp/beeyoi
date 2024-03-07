@@ -1,9 +1,7 @@
-import random
 import math
-import config
-
+from config import SUPPORT_CHANNEL, OWNER_USERNAME
 from pyrogram.types import InlineKeyboardButton
-
+from Auput import app
 from Auput.utils.formatters import time_to_seconds
 
 
