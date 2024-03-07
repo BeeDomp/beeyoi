@@ -246,7 +246,7 @@ async def chat_watcher_func(_, message):
                             f"{replied_first_name[:25]} Sedang ke Neraka {seenago}\n\n"
                         )
                     if afktype == "text_reason":
-                        msg += f"{replied_first_name[:25]} Sedang Ke Neraka {seenago}\n\n𝐑ᴇᴀsᴏɴ: {reasonafk}\n\n"
+                        msg += f"{replied_first_name[:25]} Telah Meninggal Dunia {seenago}\n\nReason: {reasonafk}\n\n"
                     if afktype == "animation":
                         if str(reasonafk) == "None":
                             send = await message.reply_animation(
@@ -256,7 +256,7 @@ async def chat_watcher_func(_, message):
                         else:
                             send = await message.reply_animation(
                                 data,
-                                caption=f"{replied_first_name[:25]} Sedang ke Neraka {seenago}\n\n𝐑ᴇᴀsᴏɴ: {reasonafk}\n\n",
+                                caption=f"{replied_first_name[:25]} Telah Meninggal Dunia {seenago}\n\nReason: {reasonafk}\n\n",
                             )
                     if afktype == "photo":
                         if str(reasonafk) == "None":
@@ -267,7 +267,7 @@ async def chat_watcher_func(_, message):
                         else:
                             send = await message.reply_photo(
                                 photo=f"downloads/{replied_user_id}.jpg",
-                                caption=f"{replied_first_name[:25]} Sedang ke Neraka {seenago}\n\n𝐑ᴇᴀsᴏɴ: {reasonafk}\n\n",
+                                caption=f"{replied_first_name[:25]} Telah meninggal dunia {seenago}\n\nReason: {reasonafk}\n\n",
                             )
                 except Exception:
                     msg += f"{replied_first_name} Sedang di Neraka,\nJangan ganggu ya Memek\n\n"
