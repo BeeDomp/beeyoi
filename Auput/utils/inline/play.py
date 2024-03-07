@@ -57,7 +57,7 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
                 url="https://t.me/iamuput",
             ),
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="ᴄʜᴀɴɴᴇʟ",
                 url="https://t.me/Flukosaa",
             ),
         ],
@@ -118,7 +118,7 @@ def telegram_markup_timer(_, chat_id, played, dur):
                 url="https://t.me/iamuput",
             ),
             InlineKeyboardButton(
-                text=_["PL_B_2"],
+                text="ᴄʜᴀɴɴᴇʟ",
                 url="https://t.me/Flukosaa",
             ),
         ],
