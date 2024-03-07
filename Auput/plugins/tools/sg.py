@@ -5,8 +5,8 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.raw.functions.messages import DeleteHistory
 
-from YukkiMusic import userbot as us, app
-from YukkiMusic.core.userbot import assistants
+from Auput import userbot as us, app
+from Auput.core.userbot import assistants
 
 
 
