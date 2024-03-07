@@ -67,29 +67,27 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    Uputt = math.floor(percentage)
-    if 0 < Uputt <= 10:
-        bar = "▷───────────"
+    r = "✄·─·─·─·─·─·─·─·─·─"
     elif 10 < Uputt < 20:
-        bar = "─▷──────────"
+        bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
     elif 20 <= Uputt < 30:
-        bar = "──▷─────────"
+        bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
     elif 30 <= Uputt < 40:
-        bar = "───▷────────"
+        bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
     elif 40 <= Uputt < 50:
-        bar = "────▷───────"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
     elif 50 <= Uputt < 60:
-        bar = "─────▷──────"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
     elif 60 <= Uputt < 70:
-        bar = "──────▷─────"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
     elif 70 <= Uputt < 80:
-        bar = "───────▷────"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
     elif 80 <= Uputt < 95:
-        bar = "────────▷───"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
     elif 95 <= Uputt < 100:
-        bar = "─────────▷──"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
     else:
-        bar = "───────────▷"
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄"
 
     buttons = [
         [
