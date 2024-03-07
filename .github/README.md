@@ -3,6 +3,7 @@
 <p align="center"><img src="https://telegra.ph//file/bbdab35972d61a0cae983.jpg" width="300"></a></p>
 <p align="center">
 
+*Test Bot ➣ [NezukoMusic](https://t.me/NezukoMusicRobot)*
 
 <p align="center">
 <b>𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗𝗦</b>
