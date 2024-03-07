@@ -11,27 +11,30 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    iamuput = math.floor(percentage)
-    if 0 < iamuput <= 10:
+    Uputt = math.floor(percentage)
+    if 0 < Uputt <= 10:
         bar = "✄·─·─·─·─·─·─·─·─·─"
-    elif 10 < iamuput < 20:
+    elif 10 < Uputt < 20:
         bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
-    elif 20 <= iamuput < 30:
+    elif 20 <= Uputt < 30:
         bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
-    elif 30 <= iamuput < 40:
+    elif 30 <= Uputt < 40:
         bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
-    elif 40 <= iamuput < 50:
+    elif 40 <= Uputt < 50:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
-    elif 50 <= iamuput < 60:
+    elif 50 <= Uputt < 60:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
-    elif 60 <= iamuput < 70:
+    elif 60 <= Uputt < 70:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
-    elif 70 <= iamuput < 80:
+    elif 70 <= Uputt < 80:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
-    elif 80 <= iamuput < 95:
+    elif 80 <= Uputt < 95:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
-    else:
+    elif 95 <= Uputt < 100:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
+    else:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄"
+
     buttons = [
                 [
             InlineKeyboardButton(
@@ -71,27 +74,30 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    iamuput = math.floor(percentage)
-    if 0 < iamuput <= 10:
+    Uputt = math.floor(percentage)
+    if 0 < Uputt <= 10:
         bar = "✄·─·─·─·─·─·─·─·─·─"
-    elif 10 < iamuput < 20:
+    elif 10 < Uputt < 20:
         bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
-    elif 20 <= iamuput < 30:
+    elif 20 <= Uputt < 30:
         bar = "-ˋˏ-ˋˏ✄·─·─·─·─·─·─·─"
-    elif 30 <= iamuput < 40:
+    elif 30 <= Uputt < 40:
         bar = "-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─·─"
-    elif 40 <= iamuput < 50:
+    elif 40 <= Uputt < 50:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─·─"
-    elif 50 <= iamuput < 60:
+    elif 50 <= Uputt < 60:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─·─"
-    elif 60 <= iamuput < 70:
+    elif 60 <= Uputt < 70:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─·─"
-    elif 70 <= iamuput < 80:
+    elif 70 <= Uputt < 80:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─·─"
-    elif 80 <= iamuput < 95:
+    elif 80 <= Uputt < 95:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·─"
-    else:
+    elif 95 <= Uputt < 100:
         bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄·"
+    else:
+        bar = "-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ-ˋˏ✄"
+        
     buttons = [
         [
             InlineKeyboardButton(
@@ -118,23 +124,32 @@ def telegram_markup_timer(_, chat_id, played, dur):
 ## Inline without Timer Bar
 
 
-def stream_markup(_, videoid, chat_id):
+def stream_markup(_, chat_id):
     buttons = [
         [
+            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
+            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
+            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
+            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
+            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
+        ],
+                 [
             InlineKeyboardButton(
-                text=_["PL_B_2"],
-                callback_data=f"add_playlist {videoid}",
+
+                text="ᴍᴇ",
+
+                url=f"t.me/{OWNER_USERNAME}",
+
             ),
             InlineKeyboardButton(
-                text=_["PL_B_3"],
-                callback_data=f"PanelMarkup None|{chat_id}",
+
+                text="ᴄʜᴀɴɴᴇʟ",
+
+                url=f"{SUPPORT_CHANNEL}",
+
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], callback_data="close"
-            )
-        ],
+        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
