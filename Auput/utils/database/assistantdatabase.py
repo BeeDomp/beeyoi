@@ -63,7 +63,7 @@ async def get_assistant(chat_id: int) -> str:
 
 
 async def set_calls_assistant(chat_id):
-    from YukkiMusic.core.userbot import assistants
+    from Auput.core.userbot import assistants
 
     ran_assistant = random.choice(assistants)
     assistantdict[chat_id] = ran_assistant
