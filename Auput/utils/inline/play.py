@@ -67,7 +67,9 @@ def telegram_markup_timer(_, chat_id, played, dur):
     played_sec = time_to_seconds(played)
     duration_sec = time_to_seconds(dur)
     percentage = (played_sec / duration_sec) * 100
-    r = "✄·─·─·─·─·─·─·─·─·─"
+    Uputt = math.floor(percentage)
+    if 0 < Uputt <= 10:
+        bar = "✄·─·─·─·─·─·─·─·─·─"
     elif 10 < Uputt < 20:
         bar = "-ˋˏ✄·─·─·─·─·─·─·─·─"
     elif 20 <= Uputt < 30:
