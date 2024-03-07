@@ -160,7 +160,7 @@ async def active_afk(_, message: Message):
         }
 
     await add_afk(user_id, details)    
-    await message.reply_text(f"{message.from_user.first_name} ɪs ɴᴏᴡ ᴀғᴋ!")
+    await message.reply_text(f"{message.from_user.first_name} Telah pergi ke Neraka!")
 
 
 
