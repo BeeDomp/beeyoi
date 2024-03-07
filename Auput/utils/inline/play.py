@@ -1,9 +1,13 @@
+import random
 import math
-from config import SUPPORT_CHANNEL, OWNER_USERNAME
+import config
+
 from pyrogram.types import InlineKeyboardButton
-from Auput import app
+
 from Auput.utils.formatters import time_to_seconds
 
+
+## After Edits with Timer Bar
 
 
 def stream_markup_timer(_, videoid, chat_id, played, dur):
@@ -42,26 +46,13 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-                 [
             InlineKeyboardButton(
-
-                text="ᴍᴇ",
-
-                url=f"t.me/{OWNER_USERNAME}",
-
+                text=_["PL_B_2"],
+                url="https://t.me/Flukosaa",
             ),
             InlineKeyboardButton(
-
-                text="ᴄʜᴀɴɴᴇʟ",
-
-                url=f"{SUPPORT_CHANNEL}",
-
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup {videoid}|{chat_id}",
             ),
         ],
         [
@@ -109,29 +100,14 @@ def telegram_markup_timer(_, chat_id, played, dur):
             )
         ],
         [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-                 [
             InlineKeyboardButton(
-
-                text="ᴍᴇ",
-
-                url=f"t.me/{OWNER_USERNAME}",
-
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
             ),
             InlineKeyboardButton(
-
-                text="ᴄʜᴀɴɴᴇʟ",
-
-                url=f"{SUPPORT_CHANNEL}",
-
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
     ]
     return buttons
 
@@ -139,32 +115,23 @@ def telegram_markup_timer(_, chat_id, played, dur):
 ## Inline without Timer Bar
 
 
-def stream_markup(_, chat_id):
+def stream_markup(_, videoid, chat_id):
     buttons = [
         [
-            InlineKeyboardButton(text="▷", callback_data=f"ADMIN Resume|{chat_id}"),
-            InlineKeyboardButton(text="II", callback_data=f"ADMIN Pause|{chat_id}"),
-            InlineKeyboardButton(text="↻", callback_data=f"ADMIN Replay|{chat_id}"),
-            InlineKeyboardButton(text="‣‣I", callback_data=f"ADMIN Skip|{chat_id}"),
-            InlineKeyboardButton(text="▢", callback_data=f"ADMIN Stop|{chat_id}"),
-        ],
-                 [
             InlineKeyboardButton(
-
-                text="ᴍᴇ",
-
-                url=f"t.me/{OWNER_USERNAME}",
-
+                text=_["PL_B_2"],
+                callback_data=f"add_playlist {videoid}",
             ),
             InlineKeyboardButton(
-
-                text="ᴄʜᴀɴɴᴇʟ",
-
-                url=f"{SUPPORT_CHANNEL}",
-
+                text=_["PL_B_3"],
+                callback_data=f"PanelMarkup None|{chat_id}",
             ),
         ],
-        [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close")],
+        [
+            InlineKeyboardButton(
+                text=_["CLOSEMENU_BUTTON"], callback_data="close"
+            )
+        ],
     ]
     return buttons
 
