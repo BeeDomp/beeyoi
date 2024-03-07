@@ -1,18 +1,8 @@
-#
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-from YukkiMusic.core.bot import YukkiBot
-from YukkiMusic.core.dir import dirr
-from YukkiMusic.core.git import git
-from YukkiMusic.core.userbot import Userbot
-from YukkiMusic.misc import dbb, heroku, sudo
+from Auput.core.bot import AuputBot
+from Auput.core.dir import dirr
+from Auput.core.git import git
+from Auput.core.userbot import Userbot
+from Auput.misc import dbb, heroku, sudo
 
 from .logging import LOGGER
 
@@ -32,7 +22,7 @@ heroku()
 sudo()
 
 # Bot Client
-app = YukkiBot()
+app = AuputBot()
 
 # Assistant Client
 userbot = Userbot()
