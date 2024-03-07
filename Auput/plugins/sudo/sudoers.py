@@ -5,6 +5,7 @@ from config import BANNED_USERS, MONGO_DB_URI, OWNER_ID
 from strings import get_command
 from Auput import app
 from Auput.misc import SUDOERS
+from Auput.utils.inline import close_markup
 from Auput.utils.database import add_sudo, remove_sudo
 from Auput.utils.decorators.language import language
 
