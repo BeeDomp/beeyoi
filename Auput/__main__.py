@@ -62,7 +62,7 @@ async def init():
         sys.exit()
     except:
         pass
-    await Yukki.decorators()
+    await Auput.decorators()
     LOGGER("Auput").info("Auput Music Bot Started Successfully")
     await idle()
 
