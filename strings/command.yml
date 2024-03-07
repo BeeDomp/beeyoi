@@ -1,16 +1,3 @@
-#
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
-
-# Commands in Every Language
-
 # Bot Commands
 PING_COMMAND : ["ping"]
 START_COMMAND : ["start"]
@@ -78,9 +65,9 @@ LOGGER_COMMAND : ["logger"]
 
 #Heroku
 GETLOG_COMMAND : ["getlog"]
-GETVAR_COMMAND : ["anukuhehe"]
-DELVAR_COMMAND : ["anumuhehe"]
-SETVAR_COMMAND : ["anumuanukubersatu"]
+GETVAR_COMMAND : ["getvar"]
+DELVAR_COMMAND : ["delvar"]
+SETVAR_COMMAND : ["setvar"]
 USAGE_COMMAND : ["usage"]
 VARS_COMMAND : ["vars", "config"]
 
