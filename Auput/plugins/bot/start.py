@@ -21,7 +21,7 @@ from Auput.utils.database import (add_served_chat,
                                        get_userss, is_on_off,
                                        is_served_private_chat)
 from Auput.utils.decorators.language import LanguageStart
-from Auput.utils.inline import (help_pannel, private_panel,
+from Auput.utils.inline import (first_page, private_panel,
                                      start_pannel)
 
 loop = asyncio.get_running_loop()
@@ -38,7 +38,7 @@ async def start_comm(client, message: Message, _):
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
-            keyboard = help_pannel(_)
+            keyboard = first_page(_)
             return await message.reply_text(
                 _["help_1"], reply_markup=keyboard
             )
