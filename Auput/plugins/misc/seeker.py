@@ -65,7 +65,7 @@ async def markup_timer():
                 except:
                     _ = get_string("en")
                 try:
-                    buttons = stream_markup_timer(
+                    buttons = telegram_markup_timer(
                         _,
                         chat_id,
                         seconds_to_min(playing[0]["played"]),
