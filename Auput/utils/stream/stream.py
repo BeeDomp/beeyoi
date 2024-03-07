@@ -1,13 +1,3 @@
-#
-# Copyright (C) 2021-present by TeamYukki@Github, < https://github.com/TeamYukki >.
-#
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
-# Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
-#
-# All rights reserved.
-#
-
 import os
 from random import randint
 from typing import Union
@@ -15,20 +5,20 @@ from typing import Union
 from pyrogram.types import InlineKeyboardMarkup
 
 import config
-from YukkiMusic import Carbon, YouTube, app
-from YukkiMusic.core.call import Yukki
-from YukkiMusic.misc import db
-from YukkiMusic.utils.database import (add_active_chat,
+from Auput import Carbon, YouTube, app
+from Auput.core.call import Auput
+from Auput.misc import db
+from Auput.utils.database import (add_active_chat,
                                        add_active_video_chat,
                                        is_active_chat,
                                        is_video_allowed, music_on)
-from YukkiMusic.utils.exceptions import AssistantErr
-from YukkiMusic.utils.inline.play import (stream_markup,
+from Auput.utils.exceptions import AssistantErr
+from Auput.utils.inline.play import (stream_markup,
                                           telegram_markup)
-from YukkiMusic.utils.inline.playlist import close_markup
-from YukkiMusic.utils.pastebin import Yukkibin
-from YukkiMusic.utils.stream.queue import put_queue, put_queue_index
-from YukkiMusic.utils.thumbnails import gen_thumb
+from Auput.utils.inline.playlist import close_markup
+from Auput.utils.pastebin import AuputBin
+from Auput.utils.stream.queue import put_queue, put_queue_index
+from Auput.utils.thumbnails import gen_thumb
 
 
 async def stream(
@@ -99,7 +89,7 @@ async def stream(
                     )
                 except:
                     raise AssistantErr(_["play_16"])
-                await Yukki.join_call(
+                await Auput.join_call(
                     chat_id, original_chat_id, file_path, video=status
                 )
                 await put_queue(
@@ -130,7 +120,7 @@ async def stream(
         if count == 0:
             return
         else:
-            link = await Yukkibin(msg)
+            link = await AuputBin(msg)
             lines = msg.count("\n")
             if lines >= 17:
                 car = os.linesep.join(msg.split(os.linesep)[:17])
@@ -234,7 +224,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Yukki.join_call(
+            await Auput.join_call(
                 chat_id, original_chat_id, file_path, video=None
             )
             await put_queue(
@@ -288,7 +278,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Yukki.join_call(
+            await Auput.join_call(
                 chat_id, original_chat_id, file_path, video=status
             )
             await put_queue(
@@ -349,7 +339,7 @@ async def stream(
             n, file_path = await YouTube.video(link)
             if n == 0:
                 raise AssistantErr(_["str_3"])
-            await Yukki.join_call(
+            await Auput.join_call(
                 chat_id, original_chat_id, file_path, video=status
             )
             await put_queue(
@@ -401,7 +391,7 @@ async def stream(
         else:
             if not forceplay:
                 db[chat_id] = []
-            await Yukki.join_call(
+            await Auput.join_call(
                 chat_id,
                 original_chat_id,
                 link,
