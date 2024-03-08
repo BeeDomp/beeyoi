@@ -39,7 +39,6 @@ Admin = filters.create(isAdmin)
 
 @app.on_message(filters.command("tagall") & filters.group & Admin & ~BANNED_USERS)
 async def tagall(client, message: Message):
-    await message.delete()
     chat_id = message.chat.id
     args = get_arg(message)
     if not args:
