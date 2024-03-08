@@ -228,3 +228,10 @@ HELP_15 = """
 
 ⦿ /sg : To Check History Name.
 """
+
+HELP_16 = """
+<b><u>Tagall :</b></u>
+
+⦿ /tagall : Mention All Group Members.
+⦿ /stoptag : Stopped Mention.
+"""
