@@ -195,7 +195,7 @@ HELP_9 = """
 HELP_10 = """
 <b><u>Welcome :</b></u>
 
- ⦿ /wel [ᴏɴ/ᴏғғ] : Special Welcome On In Your Group.
+ ⦿ /welcome [ᴏɴ/ᴏғғ] : Special Welcome On In Your Group.
 """
 
 
