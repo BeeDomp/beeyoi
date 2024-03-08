@@ -71,13 +71,13 @@ font_path = "assets/alya.ttf"
 INFO_TEXT = """
 User Information
 
-User ID : {}
-Name : {}
-Username : @{}
-Mention : {}
-User Status :\n`{}`\n
-DC ID : {}
-Bio Anak Alay : {}
+Usᴇʀ ɪᴅ : {}
+Nᴀᴍᴇ : {}
+Usᴇʀɴᴀᴍᴇ : @{}
+Mᴇɴᴛɪᴏɴ : {}
+Usᴇʀ sᴛᴀᴛᴜs : `{}`
+Dᴄ ɪᴅ : {}
+Bɪᴏ ᴀɴᴀᴋ ᴀʟᴀʏ : {}
 """
 
 # --------------------------------------------------------------------------------- #
