@@ -1,12 +1,27 @@
+import random
 import os
 from PIL import ImageDraw, Image, ImageFont, ImageChops
 from pyrogram import *
+from pyrogram import Client
+from pyrogram import filters
 from pyrogram.types import *
+from pyrogram.types import Message
+from pyrogram.types import(InlineKeyboardButton, InlineKeyboardMarkup, InputMediaPhoto, InputMediaVideo, Message)
 from logging import getLogger
 from config import LOG_GROUP_ID
 from Auput import app
 
 LOGGER = getLogger(__name__)
+
+
+uputlogo = [
+    "https://telegra.ph/file/1949480f01355b4e87d26.jpg",
+    "https://telegra.ph/file/3ef2cc0ad2bc548bafb30.jpg",
+    "https://telegra.ph/file/a7d663cd2de689b811729.jpg",
+    "https://telegra.ph/file/6f19dc23847f5b005e922.jpg",
+    "https://telegra.ph/file/2973150dd62fd27a3a6ba.jpg",
+]
+
 
 class WelDatabase:
     def __init__(self):
@@ -61,14 +76,35 @@ def welcomepic(pic, user, chat, id, uname):
     pfp_position = (671, 134)
     background.paste(pfp, pfp_position, pfp)
     background.save(f"downloads/welcome#{id}.png")
-    return f"downloads/welcome#{id}.png"
+    return f"downloads/welcome#{id}.png" 
 
-# FUCK you bhosadiwale 
+
+@app.on_message(filters.new_chat_members, group=2)
+async def join_watcher(_, message):    
+    chat = message.chat
+    link = await app.export_chat_invite_link(message.chat.id)
+    for members in message.new_chat_members:
+        if members.id == app.id:
+            count = await app.get_chat_members_count(chat.id)
+
+            msg = (
+                f"📝 Mᴜsɪᴄ ʙᴏᴛ ᴀᴅᴅᴇᴅ ɪɴ ᴀ ɴᴇᴡ ɢʀᴏᴜᴘ\n\n"
+                f"____________________________________\n\n"
+                f"📌 ᴄʜᴀᴛ ɴᴀᴍᴇ: {message.chat.title}\n"
+                f"🍂 ᴄʜᴀᴛ ɪᴅ: {message.chat.id}\n"
+                f"🔐 ᴄʜᴀᴛ ᴜsᴇʀɴᴀᴍᴇ: @{message.chat.username}\n"
+                f"🛰 ᴄʜᴀᴛ ʟɪɴᴋ: [ᴄʟɪᴄᴋ]({link})\n"
+                f"📈 ɢʀᴏᴜᴘ ᴍᴇᴍʙᴇʀs: {count}\n"
+                f"🤔 ᴀᴅᴅᴇᴅ ʙʏ: {message.from_user.mention}"
+            )
+            await app.send_photo(LOG_GROUP_ID, photo=random.choice(uputlogo), caption=msg, reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton(f"Sᴇᴇ ɢʀᴏᴜᴘ👀", url=f"{link}")]
+         ]))
 
 
 @app.on_message(filters.command("welcome") & ~filters.private)
 async def auto_state(_, message):
-    usage = "**Usage:**\n⦿/wel [on|off]\n➤"
+    usage = "**Usage:**\n⦿/welcome [on|off]\n➤"
     if len(message.command) == 1:
         return await message.reply_text(usage)
     chat_id = message.chat.id
@@ -137,7 +173,7 @@ Id ✧ {user.id}
 Username ✧ @{user.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖
 """,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"{user.first_name}", url=f"https://t.me/{user.username}")]])
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"Culik akuuuu><", url=f"https://t.me/{app.username}?startgroup=true")]])
         )
     except Exception as e:
         LOGGER.error(e)
