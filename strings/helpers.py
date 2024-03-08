@@ -16,17 +16,7 @@ HELP_1 = """✅**<u>Admin Commands:</u>**
 ✅<u>**Specific Skip:**</u>
 /skip or /cskip [Number(example: 3)] 
     - Skips music to a the specified queued number. Example: /skip 3 will skip music to third queued music and will ignore 1 and 2 music in queue.
-
-✅<u>**Loop Play:**</u>
-/loop or /cloop [enable/disable] or [Numbers between 1-10] 
-    - When activated, bot loops the current playing music to 1-10 times on voice chat. Default to 10 times.
-
-✅<u>**Auth Users:**</u>
-Auth Users can use admin commands without admin rights in your chat.
-
-/auth [Username] - Add a user to AUTH LIST of the group.
-/unauth [Username] - Remove a user from AUTH LIST of the group.
-/authusers - Check AUTH LIST of the group."""
+"""
 
 
 HELP_2 = """✅<u>**Play Commands:**</u>
@@ -73,21 +63,9 @@ HELP_4 = """✅<u>**Extra  Commands:**</u>
 ✅<u>**Group Settings:**</u>
 /settings - Get a complete group's settings with inline buttons
 
-🔗 **Options in Settings:**
-
-1️⃣ You can set **Audio Quality** you want to stream on voice chat.
-2️⃣ You can set **Video Quality** you want to stream on voice chat.
-3️⃣ **Auth Users**:- You can change admin commands mode from here to everyone or admins only. If everyone, anyone present in you group will be able to use admin commands(like /skip, /stop etc)
-4️⃣ **Clean Mode:** When enabled deletes the bot's messages after 5 mins from your group to make sure your chat remains clean and good.
-5️⃣ **Command Clean** : When activated, Bot will delete its executed commands (/play, /pause, /shuffle, /stop etc) immediately.
-6️⃣ **Play Settings:**
 
 /playmode - Get a complete play settings panel with buttons where you can set your group's play settings. 
-
-<u>Options in playmode:</u>
-1️⃣ **Search Mode** [Direct or Inline] - Changes your search mode while you give /play mode. 
-2️⃣ **Admin Commands** [Everyone or Admins] - If everyone, anyone present in you group will be able to use admin commands(like /skip, /stop etc)
-3️⃣ **Play Type** [Everyone or Admins] - If admins, only admins present in group can play music on voice chat."""
+"""
 
 HELP_5 = """🔰**<u>Sudo Commands :</u>**
 /addsudo [Username or Reply to a user]
@@ -103,10 +81,6 @@ HELP_5 = """🔰**<u>Sudo Commands :</u>**
 /whitelistchat [CHAT_ID] - Whitelist any blacklisted chat from using Music Bot
 /blacklistedchat - Check all blacklisted chats.
 
-👤**<u>BLOCKED FUNCTION:</u>**
-/block [Username or Reply to a user] - Prevents a user from using bot commands.
-/unblock [Username or Reply to a user] - Remove a user from Bot's Blocked List.
-/blockedusers - Check blocked Users Lists
 
 👤**<u>GBAN FUNCTION:</u>**
 /gban [Username or Reply to a user] - Gban a user from bot's served chat and stop him from using your bot.
