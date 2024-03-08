@@ -91,11 +91,8 @@ HELP_5 = """🔰**<u>Sudo Commands :</u>**
 /broadcast [Message or Reply to a Message] - Broadcast any message to Bot's Served Chats.
 
 <u>options for broadcast:</u>
-**-pin** : This will pin your message 
-**-pinloud** : This will pin your message with loud notification
-**-user** : This will broadcast your message to the users who have started your bot.
-**-assistant** : This will broadcast your message from assistant account of your bot.
-**-nobot** : This will force your bot to not broadcast message
+**-pin** | **-pinloud** | **-user** |
+**-assistant** | **-nobot**
 
 **Example:** `/broadcast -user -assistant -pin Hello Testing`
 
