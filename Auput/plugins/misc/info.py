@@ -71,19 +71,13 @@ font_path = "assets/alya.ttf"
 INFO_TEXT = """
 User Information
 
-User ID ❥︎ {}
-
-Name ❥︎ {}
-
-Username ❥︎ @{}
-
-Mention ❥︎ {}
-
-User Status ❥︎\n`{}`\n
-
-DC ID ❥︎ {}
-
-Bio ❥︎ {}
+User ID : {}
+Name : {}
+Username : @{}
+Mention : {}
+User Status :\n`{}`\n
+DC ID : {}
+Bio Anak Alay : {}
 """
 
 # --------------------------------------------------------------------------------- #
@@ -181,7 +175,7 @@ async def userinfo(_, message):
                 profile_path=photo,
             )
             await Alya.send_photo(chat_id, photo=welcome_photo, caption=INFO_TEXT.format(
-                id, name, username, mention, status, dc_id, bio), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"Culik akuuuu><", url=f"https://t.me/{app.username}?startgroup=true")
+                id, name, username, mention, status, dc_id, bio), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"Culik akuuuu><", url=f"https://t.me/{Alya.username}?startgroup=true")
                                                                                                      ,InlineKeyboardButton(f"Channel><", url=f"{SUPPORT_CHANNEL}",)]])
     )
         except Exception as e:
