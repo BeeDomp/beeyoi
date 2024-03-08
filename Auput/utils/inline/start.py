@@ -123,7 +123,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         [
             InlineKeyboardButton(text=_["ST_B_6"], callback_data="LG"),
             InlineKeyboardButton(
-                text="Donate", url="https://telegra.ph//file/72173c3815f3a626985ee.jpg"
+                text="Donate", url="https://telegra.ph//file/fff8a7d2f139def8d684c.jpg"
             ),
         ]
                   )
