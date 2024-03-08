@@ -1,6 +1,7 @@
 import random
 import math
 import config
+from config import SUPPORT_CHANNEL, OWNER_USERNAME
 
 from pyrogram.types import InlineKeyboardButton
 
@@ -54,11 +55,11 @@ def stream_markup_timer(_, videoid, chat_id, played, dur):
         [
             InlineKeyboardButton(
                 text="ᴍᴇ",
-                url="https://t.me/iamuput",
+                url=f"https://t.me/{OWNER_USERNAME}",
             ),
             InlineKeyboardButton(
                 text="ᴄʜᴀɴɴᴇʟ",
-                url="https://t.me/Flukosaa",
+                url=f"{SUPPORT_CHANNEL}",
             ),
         ],
         [
@@ -115,11 +116,11 @@ def telegram_markup_timer(_, chat_id, played, dur):
         [
             InlineKeyboardButton(
                 text="ᴍᴇ",
-                url="https://t.me/iamuput",
+                url=f"https://t.me/{OWNER_USERNAME}",
             ),
             InlineKeyboardButton(
                 text="ᴄʜᴀɴɴᴇʟ",
-                url="https://t.me/Flukosaa",
+                url=f"{SUPPORT_CHANNEL}",
             ),
         ],
         [
