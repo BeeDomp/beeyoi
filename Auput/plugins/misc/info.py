@@ -182,7 +182,7 @@ async def userinfo(_, message):
             )
             await Alya.send_photo(chat_id, photo=welcome_photo, caption=INFO_TEXT.format(
                 id, name, username, mention, status, dc_id, bio), reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(f"Culik akuuuu><", url=f"https://t.me/{app.username}?startgroup=true")
-                                                                                                     ,InlineKeyboardButton(text="Channel><", url=f"{SUPPORT_CHANNEL}",)]])
+                                                                                                     ,InlineKeyboardButton(f"Channel><", url=f"{SUPPORT_CHANNEL}",)]])
     )
         except Exception as e:
             await message.reply_text(str(e))
