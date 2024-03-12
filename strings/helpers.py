@@ -167,3 +167,10 @@ HELP_16 = """
 ⦿ /tagall : Mention All Group Members.
 ⦿ /stoptag : Stopped Mention.
 """
+
+HELP_17 = """
+<b><u>AntiGcast :</b></u>
+
+⦿ Kalo mau pake Order dulu lah anjeng!!
+⦿ Sung ae pc @iamuput
+"""
