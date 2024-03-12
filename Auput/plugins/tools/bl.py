@@ -74,6 +74,10 @@ async def save_filters_bl(_, message: Message):
 @app.on_message(filters.command("cekbl",["/","."]) & filters.chat(chat_id) & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
+    user = message.from_user
+    admin_list = await list_admins(message.chat.id)
+    if user.id not in admin_list:
+        await message.reply_text ("**Lu siapa dah ga kenal gua.**")
     data = await get_blacklisted_words(message.chat.id)
     if not data:
         await message.reply_text("**No blacklisted words in this chat.**")
@@ -84,14 +88,18 @@ async def get_filterss(_, message):
         await message.reply_text(msg)
 
 
-@app.on_message(filters.command("whitelist") & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("delbl") & filters.chat(chat_id) & ~filters.private)
 #@adminsOnly("can_restrict_members")
 async def del_filter(_, message):
+    user = message.from_user
+    admin_list = await list_admins(message.chat.id)
+    if user.id not in admin_list:
+        await message.reply_text ("**Lu siapa dah ga kenal gua.**")
     if len(message.command) < 2:
-        return await message.reply_text("Usage:\n/whitelist [WORD|SENTENCE]")
+        return await message.reply_text("Usage:\n/delbl [WORD|SENTENCE]")
     word = message.text.split(None, 1)[1].strip()
     if not word:
-        return await message.reply_text("Usage:\n/whitelist [WORD|SENTENCE]")
+        return await message.reply_text("Usage:\n/delbl [WORD|SENTENCE]")
     chat_id = message.chat.id
     deleted = await delete_blacklist_filter(chat_id, word)
     if deleted:
