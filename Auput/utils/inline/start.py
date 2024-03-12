@@ -56,7 +56,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                 text=_["S_B_8"], callback_data="settings_back_helper"
             )
         ]
-    ]
+    ]"""
     if SUPPORT_CHANNEL and SUPPORT_GROUP:
         buttons.append(
             [
@@ -92,7 +92,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                 url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
             )
         ]
-    )
+    )"""
     if GITHUB_REPO and OWNER:
         buttons.append(
             [
@@ -126,5 +126,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
                 text="Donate", url="https://telegra.ph//file/fff8a7d2f139def8d684c.jpg"
             ),
         ]
+    )
+    buttons.append([InlineKeyboardButton(text="Order AntiGcast", url="https://t.me/iamuput")]
                   )
     return buttons
