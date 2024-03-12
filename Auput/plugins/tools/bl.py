@@ -88,7 +88,7 @@ async def get_filterss(_, message):
         await message.reply_text(msg)
 
 
-@app.on_message(filters.command("delbl") & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("delbl",["/","."]) & filters.chat(chat_id) & ~filters.private)
 #@adminsOnly("can_restrict_members")
 async def del_filter(_, message):
     user = message.from_user
