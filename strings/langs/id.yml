@@ -252,8 +252,8 @@ S_B_3 : "👥 Group"
 S_B_4 : "⚡ Channel"
 S_B_5 : "✚ Tambahkan ke Group"
 S_B_6 : "⚡ Repository"
-S_B_7 : "👨‍💻 Pemilik Bot"
-S_B_8 : "🔎 Menu Perintah."
+S_B_7 : "Owner"
+S_B_8 : "Commands Menu"
 
 #Help 
 H_B_1 : "Admin"
@@ -272,6 +272,8 @@ H_B_13 : "Carbon"
 H_B_14 : "Quotly"
 H_B_15 : "SangMata"
 H_B_16 : "TagAll"
+H_B_16 : "AntiGcast"
+
 
 #PlayMode
 PM_B_1 : "Putar Langsung"
