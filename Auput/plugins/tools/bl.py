@@ -9,6 +9,7 @@ from pyrogram.types import ChatPermissions, Message
 
 from Auput import app
 from Auput.misc import SUDOERS
+from Auput.plugins.tools.tagall import Admin
 from Auput.utils.decorators.errorrs import capture_err
 from Auput.utils.decorators.admins import list_admins
 from Auput.mongo.filterbl import (
@@ -28,7 +29,7 @@ __HELP__ = """
 """
 chat_id = [-1001933717453]
 
-@app.on_message(filters.command("bl",["/","."]) & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("bl",["/","!"]) & filters.chat(chat_id) & ~filters.private)
 #@adminsOnly("can_restrict_members")
 async def save_filters_bl(_, message: Message):
     #chat_id = message.chat.id
@@ -71,16 +72,16 @@ async def save_filters_bl(_, message: Message):
             "Usage:\n/bl [triggers] - The words/sentences you want to blacklist",
         )
 
-@app.on_message(filters.command("cekbl",["/","."]) & filters.chat(chat_id) & ~filters.private)
+@app.on_message(filters.command("cekbl",["/","!"]) & Admin & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
     user = message.from_user
     admin_list = await list_admins(message.chat.id)
-    if user.id not in admin_list:
-        await message.reply_text ("**Lu siapa dah ga kenal gua.**")
     data = await get_blacklisted_words(message.chat.id)
     if not data:
         await message.reply_text("**No blacklisted words in this chat.**")
+    if user.id not in admin_list:
+        await message.reply_text ("**Lu siapa dah ga kenal gua.**")
     else:
         msg = f"List of blacklisted words in {message.chat.title} :\n"
         for word in data:
@@ -88,13 +89,8 @@ async def get_filterss(_, message):
         await message.reply_text(msg)
 
 
-@app.on_message(filters.command("delbl",["/","."]) & filters.chat(chat_id) & ~filters.private)
-#@adminsOnly("can_restrict_members")
+@app.on_message(filters.command("delbl",["/","!"]) & Admin & ~filters.private)
 async def del_filter(_, message):
-    user = message.from_user
-    admin_list = await list_admins(message.chat.id)
-    if user.id not in admin_list:
-        await message.reply_text ("**Lu siapa dah ga kenal gua.**")
     if len(message.command) < 2:
         return await message.reply_text("Usage:\n/delbl [WORD|SENTENCE]")
     word = message.text.split(None, 1)[1].strip()
