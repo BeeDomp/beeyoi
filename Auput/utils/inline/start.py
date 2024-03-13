@@ -46,6 +46,11 @@ def start_pannel(_):
                     )
                 ]
             )
+    buttons.append(
+        [
+            InlineKeyboardButton(text="🤖 Order Userbot", url="https://t.me/iamuput"),
+        ]
+                  )
     return buttons
 
 
