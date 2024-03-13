@@ -3,6 +3,7 @@ from pyrogram import *
 from pyrogram import Client
 from pyrogram.types import *
 from pyrogram import filters
+from pyrogram.types import(InlineKeyboardButton, InlineKeyboardMarkup, Message)
 from config import LOG_GROUP_ID
 from Auput import app as Alya
 
@@ -37,6 +38,7 @@ async def welcomek(_, message):
 
 @Alya.on_message(filters.new_chat_members & filters.group, group=-1)
 async def bot_wel(_, message):
+    link = await app.export_chat_invite_link(message.chat.id)
     for u in message.new_chat_members:
         if u.id == Alya.me.id:
             await Alya.send_message(LOG_GROUP_ID, f"""
@@ -46,4 +48,6 @@ NAME: {message.chat.title}
 ID: {message.chat.id}
 USERNAME: @{message.chat.username}
 ➖➖➖➖➖➖➖➖➖➖➖➖**
-""")
+""", reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton(f"Sᴇᴇ ɢʀᴏᴜᴘ👀", url=f"{link}")]
+         ]))
