@@ -13,7 +13,7 @@ async def welcomek(_, message):
     
     for member in message.new_chat_members:
         
-            count = await app.get_chat_members_count(chat.id)
+            count = await Alya.get_chat_members_count(chat.id)
 
             welput = [
                 f"{member.mention} Kambing Telah Datang!",  # Discord welcome messages copied
@@ -30,4 +30,4 @@ async def welcomek(_, message):
                 f"Selamat Datang Anak Pantek😭 {member.mention}",
                 f"Selamat Datang, {member.mention}. Keluarkan Sejanta Mu Mari Kita Perang.",
             ]
-            await app.send_message(message.chat.id, random.choice(welput))
+            await Alya.send_message(message.chat.id, random.choice(welput))
