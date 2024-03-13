@@ -125,10 +125,12 @@ HELP_9 = """
 """
 
 HELP_10 = """
-<b><u>Welcome :</b></u>
+<b><u>AntiGcast :</b></u>
 
- ⦿ /welcome [ᴏɴ/ᴏғғ] : Special Welcome On In Your Group.
+⦿ Kalo mau pake Order dulu lah anjeng!!
+⦿ Sung ae pc @iamuput
 """
+
 
 
 HELP_11 = """
@@ -166,11 +168,4 @@ HELP_16 = """
 
 ⦿ /tagall : Mention All Group Members.
 ⦿ /stoptag : Stopped Mention.
-"""
-
-HELP_17 = """
-<b><u>AntiGcast :</b></u>
-
-⦿ Kalo mau pake Order dulu lah anjeng!!
-⦿ Sung ae pc @iamuput
 """
