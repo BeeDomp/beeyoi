@@ -75,13 +75,9 @@ async def save_filters_bl(_, message: Message):
 @app.on_message(filters.command("cekbl",["/","!"]) & Admin & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
-    user = message.from_user
-    admin_list = await list_admins(message.chat.id)
     data = await get_blacklisted_words(message.chat.id)
     if not data:
         await message.reply_text("**No blacklisted words in this chat.**")
-    if user.id not in admin_list:
-        await message.reply_text ("**Lu siapa dah ga kenal gua.**")
     else:
         msg = f"List of blacklisted words in {message.chat.title} :\n"
         for word in data:
