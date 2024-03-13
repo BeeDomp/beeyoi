@@ -10,11 +10,11 @@ def start_pannel(_):
     buttons = [
         [
             InlineKeyboardButton(
-                text=_["S_B_1"],
-                url=f"https://t.me/{app.username}?start=help",
+                text=_["S_B_2"], callback_data="settings_helper"
             ),
             InlineKeyboardButton(
-                text=_["S_B_2"], callback_data="settings_helper"
+                text=_["S_B_1"],
+                url=f"https://t.me/{app.username}?start=help",
             ),
         ],
     ]
