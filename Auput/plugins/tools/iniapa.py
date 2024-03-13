@@ -1,7 +1,9 @@
 import random
+from pyrogram import *
 from pyrogram import Client
-from pyrogram.types import Message
+from pyrogram.types import *
 from pyrogram import filters
+from config import LOG_GROUP_ID
 from Auput import app as Alya
 
 
@@ -31,3 +33,17 @@ async def welcomek(_, message):
                 f"Selamat Datang, {member.mention}. Keluarkan Sejanta Mu Mari Kita Perang.",
             ]
             await Alya.send_message(message.chat.id, random.choice(welput))
+
+
+@Alya.on_message(filters.new_chat_members & filters.group, group=-1)
+async def bot_wel(_, message):
+    for u in message.new_chat_members:
+        if u.id == Alya.me.id:
+            await Alya.send_message(LOG_GROUP_ID, f"""
+**NEW GROUP
+➖➖➖➖➖➖➖➖➖➖➖➖
+NAME: {message.chat.title}
+ID: {message.chat.id}
+USERNAME: @{message.chat.username}
+➖➖➖➖➖➖➖➖➖➖➖➖**
+""")
