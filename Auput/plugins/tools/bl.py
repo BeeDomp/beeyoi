@@ -52,8 +52,8 @@ async def save_filters_bl(_, message: Message):
         )
         for trigger in to_blacklist:
             await save_blacklist_filter(-1001933717453, trigger.lower())
-        if is_reply:
-            await message.delete()
+        #if is_reply:
+            #await message.delete()
         if len(to_blacklist) == 1:
             add = await message.reply_text(
                 f"Added <code>{html.escape(to_blacklist[0])}</code> to the blacklist filters!",
