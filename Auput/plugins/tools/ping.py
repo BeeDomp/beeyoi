@@ -8,10 +8,9 @@ from strings import get_command
 from Auput import app
 from Auput.core.call import Auput
 from Auput.utils import bot_sys_stats
+from Auput.utils.inline import supp_markup
 from Auput.utils.decorators.language import language
 
-### Commands
-PING_COMMAND = get_command("PING_COMMAND")
 
 
 @app.on_message(filters.command("ping",["/","!"]) & ~BANNED_USERS)
