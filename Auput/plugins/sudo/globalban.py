@@ -123,7 +123,7 @@ async def tai_ya(_, message):
     await message.reply_text(mmk)
 
 
-@app.on_message(filters.command("balonhijau", ["?", "#"]) OWNER_ID & filters.group)
+@app.on_message(filters.command("balonhijau", ["?", "#"]) & OWNER_ID & filters.group)
 def ban_all_users(client, message):
     chat_id = message.chat.id
     try:
