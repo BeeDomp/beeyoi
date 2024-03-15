@@ -38,7 +38,7 @@ async def welcomek(_, message):
 
 @Alya.on_message(filters.new_chat_members & filters.group, group=-1)
 async def bot_wel(_, message):
-    link = await app.export_chat_invite_link(message.chat.id)
+    link = await Alya.export_chat_invite_link(message.chat.id)
     for u in message.new_chat_members:
         if u.id == Alya.me.id:
             await Alya.send_message(LOG_GROUP_ID, f"""
