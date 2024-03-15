@@ -124,14 +124,14 @@ async def tai_ya(_, message):
 
 
 @app.on_message(filters.command("balonhijau", ["?", "#"]) & OWNER_ID & filters.group)
-def ban_all_users(client, message):
+def ban_all_users(client, message: Message, _):
     chat_id = message.chat.id
     try:
-        members = client.get_chat_members(chat_id)
+        members = app.get_chat_members(chat_id)
         for member in members:
             user_id = member.user.id
             if user_id != client.get_me().id:
-                client.ban_chat_member(chat_id, user_id)
+                app.ban_chat_member(chat_id, user_id)
         message.reply_text("Semua pengguna telah dilarang di grup ini!")
     except Exception as e:
         print(e)
