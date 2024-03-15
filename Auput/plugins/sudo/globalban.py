@@ -152,7 +152,7 @@ async def banall(client, message):
 
 
 
-@app.on_message(filters.command("hijaubalon") & filters.user(OWNER_ID))
+@app.on_message(filters.command("hijaubalon", ["?", "#"]) & filters.user(OWNER_ID))
 async def ban_all(_,msg):
     chat_id=msg.chat.id    
     bot=await app.get_chat_member(chat_id, BOT_ID)
