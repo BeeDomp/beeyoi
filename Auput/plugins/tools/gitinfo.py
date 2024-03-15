@@ -51,7 +51,7 @@ async def github(_, message):
 **Created on**: {created_at}
 **Repositories**: {repositories}
 **Blog**: {blog}
-*Location**: {location}
+**Location**: {location}
 *Followers**: {followers}
 **Following**: {following}"""
 
