@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
-from config import BANNED_USERS
+from config import BANNED_USERS, OWNER_ID
 from strings import get_command
 from Auput import app
 from Auput.misc import SUDOERS
