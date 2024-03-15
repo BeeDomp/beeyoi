@@ -43,26 +43,32 @@ async def github(_, message):
                 followers = result['followers']
                 following = result['following']
 
-                caption = f"""ɢɪᴛʜᴜʙ ɪɴғᴏ ᴏғ {name}
+                caption = f"""Github Info Of {name}
                 
-ᴜsᴇʀɴᴀᴍᴇ: {username}
-ʙɪᴏ: {bio}
-ʟɪɴᴋ: [Here]({url})
-ᴄᴏᴍᴩᴀɴʏ: {company}
-ᴄʀᴇᴀᴛᴇᴅ ᴏɴ: {created_at}
-ʀᴇᴩᴏsɪᴛᴏʀɪᴇs: {repositories}
-ʙʟᴏɢ: {blog}
-ʟᴏᴄᴀᴛɪᴏɴ: {location}
-ғᴏʟʟᴏᴡᴇʀs: {followers}
-ғᴏʟʟᴏᴡɪɴɢ: {following}"""
+**Username**: {username}
+**Bio**: {bio}
+**Company**: {company}
+**Created on**: {created_at}
+**Repositories**: {repositories}
+**Blog**: {blog}
+*Location**: {location}
+*Followers**: {followers}
+**Following**: {following}"""
 
             except Exception as e:
                 print(str(e))
                 pass
 
-    # Create an inline keyboard with a close button
-    close_button = InlineKeyboardButton("Close", callback_data="close")
-    inline_keyboard = InlineKeyboardMarkup([[close_button]])
-
     # Send the message with the inline keyboard
-    await message.reply_photo(photo=avatar_url, caption=caption, reply_markup=inline_keyboard)
+    await message.reply_photo(photo=avatar_url, caption=caption, reply_markup=InlineKeyboardMarkup(
+            [
+               [
+            InlineKeyboardButton(
+                text="Link", url=f"{url}"
+            ),
+            InlineKeyboardButton(
+                text="Close", callback_data="close"
+            )
+               ],
+            ]
+    )
