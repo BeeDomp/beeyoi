@@ -58,20 +58,20 @@ async def executor(client, message):
     stderr = redirected_error.getvalue()
     sys.stdout = old_stdout
     sys.stderr = old_stderr
-    evaluation = ""
+    evaluation = "\n"
     if exc:
-        evaluation = exc
+        evaluation += exc
     elif stderr:
-        evaluation = stderr
+        evaluation += stderr
     elif stdout:
-        evaluation = stdout
+        evaluation += stdout
     else:
-        evaluation = "CROTTT 🥵"
-    final_output = f"**OUTPUT**:\n```{evaluation.strip()}```"
+        evaluation += "CROTTT 🥵"
+    final_output = f"<b>⥤ Output :</b>\n<pre language='python'>{evaluation}</pre>"
     if len(final_output) > 4096:
         filename = "output.txt"
         with open(filename, "w+", encoding="utf8") as out_file:
-            out_file.write(str(evaluation.strip()))
+            out_file.write(str(evaluation))
         t2 = time()
         keyboard = InlineKeyboardMarkup(
             [
