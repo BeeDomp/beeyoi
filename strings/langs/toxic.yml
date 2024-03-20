@@ -238,10 +238,10 @@ stream_4 : "☠️ **Memulai Streaming** \n\n**🏷Judul:** [{0}]({1})\n⌛️**
 # Inline Buttons
 
 #General Buttons
-CLOSE_BUTTON : "🗑 Tutup"
-CLOSEMENU_BUTTON : "🗑 Tutup Menu"
+CLOSE_BUTTON : "ᴄʟᴏsᴇ"
+CLOSEMENU_BUTTON : "Close Menu"
 BACK_BUTTON : "⬅ Balik"
-UNBAN_BUTTON : "🗑 Unban Asisten"
+UNBAN_BUTTON : "Unban Asisten"
 
 #Lyrics
 L_B_1 : "🚀 Liat lirik"
