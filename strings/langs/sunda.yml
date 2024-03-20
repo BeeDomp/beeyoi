@@ -225,10 +225,10 @@ stream_4 : "📡 **Mimitian Streaming** \n\n**🏷Judul:** [{0}]({1})\n⌛️**D
 # Tombol Inline
 
 #Tombol Umum
-CLOSE_BUTTON : "🗑 Tutup"
-CLOSEMENU_BUTTON : "🗑 Tutup Menu"
+CLOSE_BUTTON : "ᴄʟᴏsᴇ"
+CLOSEMENU_BUTTON : "Close Menu"
 BACK_BUTTON : "⬅ Balik"
-UNBAN_BUTTON : "🗑 Unban Assistant"
+UNBAN_BUTTON : "Unban Assistant"
 
 #Lyrics
 L_B_1 : "🚀 Tingali Lirik "
