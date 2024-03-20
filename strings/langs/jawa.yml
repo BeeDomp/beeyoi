@@ -239,10 +239,10 @@ stream_4 : "📡 **Memulai Streaming** \n\n**🏷Judul:** [{0}]({1})\n⌛️**Du
 # Inline Buttons
 
 #General Buttons
-CLOSE_BUTTON : "🗑 Tutup"
-CLOSEMENU_BUTTON : "🗑 Tutup Menu"
+CLOSE_BUTTON : "ᴄʟᴏsᴇ"
+CLOSEMENU_BUTTON : "Close Menu"
 BACK_BUTTON : "⬅ Mbalik"
-UNBAN_BUTTON : "🗑 Unban Assistant"
+UNBAN_BUTTON : "Unban Assistant"
 
 #Lyrics
 L_B_1 : "🚀 Deleng Lirik Saiki"
