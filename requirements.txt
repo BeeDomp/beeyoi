@@ -29,5 +29,7 @@ youtube-search
 youtube-search-python
 yt-dlp
 gtts
+emoji
 httpx
+httpx[http2]
 gpytranslate
