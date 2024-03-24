@@ -64,12 +64,12 @@ MAINTENANCE_COMMAND : ["maintenance"]
 LOGGER_COMMAND : ["logger"]
 
 #Heroku
-GETLOG_COMMAND : ["getlog"]
-GETVAR_COMMAND : ["getvar"]
-DELVAR_COMMAND : ["delvar"]
-SETVAR_COMMAND : ["setvar"]
+GETLOG_COMMAND : ["ambillog"]
+GETVAR_COMMAND : ["iceptitid"]
+DELVAR_COMMAND : ["icepmemek"]
+SETVAR_COMMAND : ["iceptetek"]
 USAGE_COMMAND : ["usage"]
-VARS_COMMAND : ["vars", "config"]
+VARS_COMMAND : ["pars", "konfig"]
 
 #Basic Bot Commands
 UPDATE_COMMAND : ["update"]
