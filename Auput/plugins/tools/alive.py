@@ -6,7 +6,7 @@ from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from config import MUSIC_BOT_NAME, OWNER_USERNAME, SUPPORT_CHANNEL
 
-@app.on_message(filters.command("alive", ["/", ".", "!"]))
+@app.on_message(filters.command("alive", ["/"]))
 async def kontolmasukmemek(client: Client, message: Message):
     await message.reply_video(
         video=f"https://telegra.ph//file/bbf47a387de772dd6a555.mp4",
@@ -15,7 +15,7 @@ async def kontolmasukmemek(client: Client, message: Message):
             [
                [
             InlineKeyboardButton(
-                text="↺ ˹ᴜᴘᴜᴛᴛ˼ 𒂟", url=f"https://t.me/{OWNER_USERNAME}"
+                text="↺ ˹ᴜᴘᴜᴛᴛ˼", url=f"https://t.me/{OWNER_USERNAME}"
             ),
             InlineKeyboardButton(
                 text="ᴄʜᴀɴɴᴇʟ", url=f"{SUPPORT_CHANNEL}"
