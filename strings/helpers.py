@@ -125,10 +125,11 @@ HELP_9 = """
 """
 
 HELP_10 = """
-<b><u>AntiGcast :</b></u>
+<b><u>Blacklist :</b></u>
 
-⦿ Kalo mau pake Order dulu lah anjeng!!
-⦿ Sung ae pc @iamuput
+⦿ /bl : Tau kan untuk apa njeng?
+⦿ /delbl : tau kan njeng.
+⦿ /cekbl : ???
 """
 
 
