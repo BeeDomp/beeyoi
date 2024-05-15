@@ -29,7 +29,7 @@ __HELP__ = """
 """
 #chat_id = [-1001933717453]
 
-@app.on_message(filters.command("bl",["/","!"]) & filters.chat & ~filters.private)
+@app.on_message(filters.command("bl",["/","!"]) & filters.group & ~filters.private)
 #@adminsOnly("can_restrict_members")
 async def save_filters_bl(_, message: Message):
     #chat_id = message.chat.id
@@ -99,7 +99,7 @@ async def del_filter(_, message):
     await message.reply_text("**No such blacklist filter.**")
 
 
-@app.on_message(filters.text & filters.chat & ~filters.private, group=blacklist_filters_group)
+@app.on_message(filters.text & filters.group & ~filters.private, group=blacklist_filters_group)
 @capture_err
 async def blacklist_filters_re(_, message):
     text = message.text.lower().strip()
