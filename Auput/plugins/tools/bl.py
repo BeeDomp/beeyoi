@@ -72,10 +72,11 @@ async def save_filters_bl(_, message: Message):
             "Usage:\n/bl [triggers] - The words/sentences you want to blacklist",
         )
 
-@app.on_message(filters.command("cekbl",["/","!"]) & Admin & ~filters.private)
+@app.on_message(filters.command("cekbl",["/","!"]) & Admin & filters.group & ~filters.private)
 @capture_err
 async def get_filterss(_, message):
-    data = await get_blacklisted_words(message.chat.id)
+    chat_id = message.chat.id
+    data = await get_blacklisted_words(chat_id)
     if not data:
         await message.reply_text("**No blacklisted words in this chat.**")
     else:
