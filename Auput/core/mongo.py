@@ -11,10 +11,10 @@ TEMP_MONGODB = "mongodb+srv://userbot:userbot@userbot.nrzfzdf.mongodb.net/?retry
 
 if config.MONGO_DB_URI is None:
     LOGGER(__name__).warning(
-        "No MONGO DB URL found.. Your Bot will work on Nezuko Database"
+        "No MONGO DB URL found.. Your Bot will work on Bee Database"
     )
     temp_client = Client(
-        "Auput",
+        "Yoichi",
         bot_token=config.BOT_TOKEN,
         api_id=config.API_ID,
         api_hash=config.API_HASH,
