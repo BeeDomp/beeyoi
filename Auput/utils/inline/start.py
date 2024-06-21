@@ -48,7 +48,7 @@ def start_pannel(_):
             )
     buttons.append(
         [
-            InlineKeyboardButton(text="🤖 Order Userbot", url="https://t.me/iamuput"),
+            InlineKeyboardButton(text="🎭 Owner", url="https://t.me/BeeIsHeree"),
         ]
                   )
     return buttons
@@ -100,7 +100,7 @@ def private_panel(_, BOT_USERNAME, OWNER: Union[bool, int] = None):
         [
             InlineKeyboardButton(text=_["ST_B_6"], callback_data="LG"),
             InlineKeyboardButton(
-                text="💵 Donate", url="https://telegra.ph//file/fff8a7d2f139def8d684c.jpg"
+                text="📝 More Information", url="https://t.me/Top_Mutualan_Indonesia"
             ),
         ]
                   )
